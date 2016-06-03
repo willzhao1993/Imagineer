@@ -1,0 +1,26 @@
+<div id="chatbox">
+    <div style="background:#3d3d3d;height: 28px; width: 100%;font-size:12px;">
+        <div style="line-height: 28px;color:#fff;">
+            <span style="text-align:left;margin-left:10px;">Websocket多人聊天室</span>
+                    <span style="float:right; margin-right:10px;"><span id="showusername">{{userInfo.userName}}</span> |
+					<a href="javascript:;" ng-click="logout()" style="color:#fff;">退出</a></span>
+        </div>
+    </div>
+    <div id="doc">
+        <div id="chat">
+            <div id="message" class="message">
+                <div id="onlinecount" style="background:#EFEFF4; font-size:12px; margin-top:10px; margin-left:10px; color:#666;">
+                    当前共有{{onlineCount}}人在线，在线列表{{userHtml}}
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input">
+                    <input type="text" maxlength="140" placeholder="请输入聊天内容，按Ctrl提交" ng-model="content" ng-keypress="enter($event)">
+                </div>
+                <div class="action">
+                    <button type="button" id="mjr_send" ng-click="submit()">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+require.config({
+    baseUrl:'',
+    urlArgs:'',
+    paths:{
+        'jquery':'assets/js/jquery/jquery-2.1.4',
+        'angular':'assets/js/angular/angular1.2.20',
+        'angular-ui-router':'assets/js/angular-ui-router/angular-ui-router.min',
+        'mc-chat':'common/api/chat',
+        'mainCtrl':'common/controller/mainCtrl',
+        'app':'common/app',
+        'app-init':'common/app-init',
+        'config':'common/config',
+        'routeDefs':'common/routeDefs'
+    },
+    shim:{
+        'jquery':{
+            exports:'$'
+        },
+        'angular':{
+            deps:['jquery']
+        },
+        'angular-ui-router':{
+            deps:['angular']
+        },
+        'app':{
+            deps:['angular']
+        }
+    },
+    priority:[
+        'jquery',
+        'angular'
+    ],
+    waitSeconds:2000
+});
+
+require([
+    'jquery',
+    'angular',
+    'app-init',
+    'mainCtrl'
+],function(){
+    angular.element().ready(function(){
+        angular.bootstrap($('#ng-app'),['myApp']);
+    });
+});

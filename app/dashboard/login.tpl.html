@@ -1,0 +1,11 @@
+<div id="loginbox">
+    <div style="width:260px;margin:200px auto;">
+        请先输入你在聊天室的昵称
+        <br/>
+        <br/>
+        <ng-form name="form">
+            <input type="text" style="width:180px;" placeholder="请输入用户名" ng-model="userInfo.userName" required/>
+            <input type="button" style="width:50px;" value="提交" ng-click="userNameSubmit()" ng-disabled="form.$invalid"/>
+        </ng-form>
+    </div>
+</div>
