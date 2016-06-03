@@ -9,6 +9,7 @@
   "author": "zhaoguangzu",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.4.2",
     "express": "^4.13.4",
     "socket.io": "^1.4.5"
   }
