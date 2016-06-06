@@ -2,7 +2,7 @@ define([
     'app',
     'config'
 ],function(app,config){
-    app.controller('DashBoardCtrl',['$scope','$$chat','$timeout','$rootScope','$location','$state','$stateParams',
+    app.controller('dashBoardCtrl',['$scope','$$chat','$timeout','$rootScope','$location','$state','$stateParams',
         function($scope,$$chat,$timeout,$rootScope,$location,$state,$stateParams){
 
             //随机生成用户id
@@ -89,8 +89,8 @@ define([
                 scrollToBottom();
 
                 //连接websocket后端服务器
-                //$scope.socket = io.connect('localhost:3000');
-                $scope.socket = io.connect('http://6f3d2395.ngrok.natapp.cn');
+                $scope.socket = io.connect('localhost:3000');
+                //$scope.socket = io.connect('http://6f3d2395.ngrok.natapp.cn');
                 //告诉服务端有用户登录
                 if($scope.userInfo.userName!=''){
                     $scope.socket.emit('login',{userId:$scope.userInfo.userId,userName:$scope.userInfo.userName});

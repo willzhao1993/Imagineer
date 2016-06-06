@@ -1,6 +1,7 @@
 define([
     'app',
-    'dashboard/dashboard.ctrl'
+    'dashboard/dashboard.ctrl',
+    'login/login.ctrl'
 ],function(app){
     app.config(function($stateProvider,$urlRouterProvider){
         $urlRouterProvider.when('', '/');
@@ -14,7 +15,8 @@ define([
                 cache:false,
                 views:{
                     'main':{
-                        templateUrl:'dashboard/login.tpl.html'
+                        templateUrl:'login/login.tpl.html',
+                        controller:'loginCtrl'
                     }
                 }
             })
@@ -25,7 +27,7 @@ define([
                 views:{
                     'main':{
                         templateUrl:'dashboard/dashboard.tpl.html',
-                        controller:'DashBoardCtrl'
+                        controller:'dashBoardCtrl'
                     }
                 }
             })
